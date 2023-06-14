@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width"> <!-- Meta tag que define o tamanho da página para dispositivos móveis -->
+	</head>
+	<body>
+		<!-- Elemento de vídeo com atributos src, width, height, autoplay e muted -->
+
+		<video src="https://drive.google.com/uc?export=download&id=16A4zd-G4dWsO_NQPRQAw2h69ges2hVnY" width="100%" height="100%" autoplay loop muted></video>
+
+	<script>
+
+		// Selecionando o elemento de vídeo e adicionando um ouvinte para o evento 'playing'
+
+		var video = document.querySelector('video');
+		video.addEventListener('playing', function() {
+			video.requestFullscreen(); // Quando o vídeo estiver tocando, solicita o modo de tela cheia
+		});
+		
+		// Adicionando um ouvinte para o evento 'dblclick'
+
+		video.addEventListener('dblclick', function() {
+		    if (video.requestFullscreen) {
+		        video.requestFullscreen(); // Se o navegador suportar o modo de tela cheia padrão, solicita-o
+		    } else if (video.webkitRequestFullscreen) { /* Safari */
+		        video.webkitRequestFullscreen(); // Se o navegador for Safari, solicita o modo de tela cheia para o WebKit
+		    } else if (video.msRequestFullscreen) { /* IE11 */
+		        video.msRequestFullscreen(); // Se o navegador for o IE11, solicita o modo de tela cheia para o Microsoft
+		    }
+		});
+
+	</script>
+
+</body>
+
+</html>
