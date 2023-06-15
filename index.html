@@ -30,7 +30,7 @@
 
         setInterval(function() {
             loadVideo();
-        }, 10000);
+        }, 60000); // Atualização a cada 1 minuto (60.000 milissegundos) alterar para o tempo desejado
 
         video.addEventListener('playing', function() {
             if (video.requestFullscreen) {
